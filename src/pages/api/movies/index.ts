@@ -25,9 +25,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       const moviesResponse: MoviesResponse = response.data;
       res.status(200).json(moviesResponse);
     } else {
-      res.status(500).json({ error: 'Erro ao buscar filmes/series' });
+      res.status(500).json({
+        error: 'Erro ao buscar filmes/series',
+        page: 0,
+        results: [],
+        total_pages: 0,
+        total_results: 0
+      });
     }
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({
+      error: error.message,
+      page: 0,
+      results: [],
+      total_pages: 0,
+      total_results: 0
+    });
   }
 }
