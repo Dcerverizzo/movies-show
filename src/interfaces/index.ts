@@ -45,6 +45,7 @@ export interface TvShowResponse {
   results: TvShow[];
   total_pages: number;
   total_results: number;
+  error: string;
 }
 
 
