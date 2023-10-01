@@ -52,7 +52,7 @@ const MoviesPage: React.FC<MoviesProps> = ({ movies, totalResults }) => {
       const { API_LOCAL } = process.env;
 
       const response = await axios.get<MoviesResponse>(
-        `http://localhost:3000/api/movies?page=${newPage}`
+        `${API_LOCAL}/movies?page=${newPage}`
       );
 
       const newMovies = response.data.results;

@@ -126,7 +126,7 @@ export const getServerSideProps: GetServerSideProps<TvShowProps> = async (contex
   try {
     const { API_LOCAL } = process.env;
     const page = context.query.page || 1;
-    const response = await axios.get<TvShowResponse>(`http://localhost:3000/api/tv-show?page=${page}`);
+    const response = await axios.get<TvShowResponse>(`${API_LOCAL}/tv-show?page=${page}`);
     const tvShows = response.data.results;
     const totalResults = response.data.total_results;
 
